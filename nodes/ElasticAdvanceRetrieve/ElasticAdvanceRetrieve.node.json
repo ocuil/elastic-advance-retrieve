@@ -1,0 +1,103 @@
+{
+  "node": "ElasticAdvanceRetrieve",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": ["Data & Storage"],
+  "resources": {
+    "primaryDocumentation": [
+      {
+        "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html"
+      }
+    ]
+  },
+  "subcategories": {
+    "Data & Storage": ["Databases"]
+  },
+  "alias": ["ElasticSearch", "ES", "Search", "Query"],
+  "credentials": [
+    {
+      "name": "elasticAdvanceRetrieveApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "resource": [
+            "document"
+          ]
+        }
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "name": "resource",
+      "type": "options",
+      "noDataExpression": true,
+      "default": "document",
+      "options": [
+        {
+          "name": "Document",
+          "value": "document"
+        }
+      ]
+    },
+    {
+      "name": "operation",
+      "type": "options",
+      "noDataExpression": true,
+      "displayOptions": {
+        "show": {
+          "resource": [
+            "document"
+          ]
+        }
+      },
+      "default": "search",
+      "options": [
+        {
+          "name": "Search",
+          "value": "search",
+          "description": "Search documents using Elasticsearch query DSL"
+        }
+      ]
+    },
+    {
+      "displayName": "Index",
+      "name": "index",
+      "type": "string",
+      "default": "",
+      "required": true,
+      "description": "The Elasticsearch index to search in",
+      "displayOptions": {
+        "show": {
+          "resource": [
+            "document"
+          ],
+          "operation": [
+            "search"
+          ]
+        }
+      }
+    },
+    {
+      "displayName": "Query (JSON)",
+      "name": "query",
+      "type": "json",
+      "default": "{\n  \"query\": {\n    \"match_all\": {}\n  }\n}",
+      "required": true,
+      "description": "The Elasticsearch query in JSON format (using the Elasticsearch Query DSL)",
+      "typeOptions": {
+        "alwaysOpenEditWindow": true
+      },
+      "displayOptions": {
+        "show": {
+          "resource": [
+            "document"
+          ],
+          "operation": [
+            "search"
+          ]
+        }
+      }
+    }
+  ]
+}

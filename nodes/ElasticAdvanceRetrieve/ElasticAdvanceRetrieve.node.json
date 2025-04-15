@@ -2,16 +2,13 @@
   "node": "ElasticAdvanceRetrieve",
   "nodeVersion": "1.0",
   "codexVersion": "1.0",
-  "categories": ["Data & Storage"],
+  "categories": ["Development", "Data & Storage"],
   "resources": {
     "primaryDocumentation": [
       {
         "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html"
       }
     ]
-  },
-  "subcategories": {
-    "Data & Storage": ["Databases"]
   },
   "alias": ["ElasticSearch", "ES", "Search", "Query"],
   "credentials": [

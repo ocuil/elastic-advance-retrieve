@@ -5,6 +5,8 @@ import {
 	INodeTypeDescription,
 	NodeOperationError,
 } from 'n8n-workflow';
+import { NodeConnectionType } from 'n8n-workflow';
+
 import axios from 'axios';
 
 export class ElasticAdvanceRetrieve implements INodeType {
@@ -14,13 +16,14 @@ export class ElasticAdvanceRetrieve implements INodeType {
 		icon: 'file:elasticsearch.svg',
 		group: ['transform'],
 		version: 1,
-		subtitle: '={{$parameter["operation"]}}',
+		subtitle: '={{$parameter["query"]}}',
 		description: 'Advanced document retrieval from Elasticsearch',
 		defaults: {
 			name: 'Elasticsearch Advance Retrieve',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
+        usableAsTool: true,
+        inputs: [NodeConnectionType.Main],
+        outputs: [NodeConnectionType.Main],
 		credentials: [
 			{
 				name: 'elasticAdvanceRetrieveApi',
